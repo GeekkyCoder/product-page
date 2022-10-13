@@ -1,4 +1,4 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import productImg from "../images/products/image-product-1.jpg";
 import minusIcon from "../images/icons/icon-minus.png";
 import plusIcon from "../images/icons/icon-plus.png";
@@ -9,24 +9,47 @@ import product4 from "../images/products/image-product-4.jpg";
 import { Context } from "./Context";
 
 export default function Main() {
-  const {count,incrementCount,decrementCount} = useContext(Context)
+  const { count, incrementCount, decrementCount, imgState, setImageState } =
+    useContext(Context);
+
+  function handleImageClick(e) {
+    const imgSrc = e.target.getAttribute("src");
+    setImageState(imgSrc);
+  }
 
   const mainProductStyles = {
     borderRadius: "10px",
     height: "356px",
     objectFit: "cover",
   };
+
   return (
     <div className="wrapper flex">
       <div className="main-product">
         <div className="main-product-image">
-          <img style={mainProductStyles} src={productImg} alt="producut-1" />
+          <img style={mainProductStyles} src={imgState} alt="producut-1" />
         </div>
         <div className="small-images">
-          <img src={product1} alt="product-1" />
-          <img src={product2} alt="product-2" />
-          <img src={product3} alt="product-3" />
-          <img src={product4} alt="product-4" />
+          <img
+            onClick={(e) => handleImageClick(e)}
+            src={product1}
+            alt="product-1"
+          />
+          <img
+            onClick={(e) => handleImageClick(e)}
+            src={product2}
+            alt="product-2"
+          />
+          <img
+            onClick={(e) => handleImageClick(e)}
+            src={product3}
+            alt="product-3"
+          />
+          <img
+            onClick={(e) => handleImageClick(e)}
+            src={product4}
+            alt="product-4"
+          />
         </div>
       </div>
       <div className="main-info">
@@ -45,7 +68,12 @@ export default function Main() {
         <div className="main-cart">
           <div className="icons-container">
             <div className="minus">
-              <img onClick={decrementCount} className="minus-icon" src={minusIcon} alt="minus-icon" />
+              <img
+                onClick={decrementCount}
+                className="minus-icon"
+                src={minusIcon}
+                alt="minus-icon"
+              />
             </div>
             <p
               style={{ margin: "0", fontWeight: "bold" }}
@@ -54,7 +82,12 @@ export default function Main() {
               {count}
             </p>
             <div className="plus">
-              <img onClick={incrementCount} className="plus-icon" src={plusIcon} alt="plus-icon" />
+              <img
+                onClick={incrementCount}
+                className="plus-icon"
+                src={plusIcon}
+                alt="plus-icon"
+              />
             </div>
           </div>
           <div className="btn-container">
