@@ -13,9 +13,11 @@ export default function Main() {
     useContext(Context);
 
   function handleImageClick(e) {
-    const imgSrc = e.target.getAttribute("src");
-    setImageState(imgSrc);
+    const imgSrc = e.target.src;
+    const sliceImgSrc = imgSrc.split("http://127.0.0.1:5173")[1]
+    setImageState(sliceImgSrc);
   }
+
 
   const isBtnDisabled = count > 0 ? false : true;
 
