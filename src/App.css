@@ -168,6 +168,12 @@ img {
   flex-direction: column;
 }
 
+.main-product-image img{
+  border-radius: 10px;
+  height: 356px;
+  object-fit: cover;
+}
+
 .main-product .small-images {
   display: flex;
   justify-content: space-between;
@@ -285,6 +291,10 @@ img {
 
 .cart-btn:active {
   background: hsl(20, 90%, 55%);
+}
+
+.cart-btn:disabled{
+  cursor:not-allowed;
 }
 
 .plus-icon:hover {
@@ -486,4 +496,14 @@ img {
   color: hsl(219, 9%, 45%);
   font-weight: bold;
   text-align: center;
+}
+
+@media (max-width:700px){
+  .cart-container{
+    width: 100%;
+    border-radius: 0%;
+    height: 236px;
+    right: 0%;
+    top: 16%;
+  }
 }

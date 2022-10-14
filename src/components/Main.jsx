@@ -17,17 +17,13 @@ export default function Main() {
     setImageState(imgSrc);
   }
 
-  const mainProductStyles = {
-    borderRadius: "10px",
-    height: "356px",
-    objectFit: "cover",
-  };
+  const isBtnDisabled = count > 0 ? false : true;
 
   return (
     <div className="wrapper flex">
       <div className="main-product">
         <div className="main-product-image">
-          <img style={mainProductStyles} src={imgState} alt="producut-1" />
+          <img src={imgState} alt="producut-1" />
         </div>
         <div className="small-images">
           <img
@@ -91,7 +87,9 @@ export default function Main() {
             </div>
           </div>
           <div className="btn-container">
-            <button className="btn cart-btn">Add to cart</button>
+            <button disabled={isBtnDisabled} className="btn cart-btn">
+              Add to cart
+            </button>
           </div>
         </div>
       </div>
