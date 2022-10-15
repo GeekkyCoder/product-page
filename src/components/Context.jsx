@@ -30,6 +30,10 @@ function ContextProvider(props) {
     setIsCartClicked((prevState) => !prevState);
   }
 
+  function removeItemFromCart(){
+    setCount(0)
+  }
+
   return (
     <Context.Provider
       value={{
@@ -42,6 +46,7 @@ function ContextProvider(props) {
         handleCartClick,
         imgState,
         setImageState,
+        removeItemFromCart
       }}
     >
       {props.children}

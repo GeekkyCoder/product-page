@@ -4,7 +4,7 @@ import productImg from "../../public/images/products/image-product-1.jpg";
 import deleteIcon from "../../public/images/icons/icon-delete.png";
 
 function Cart() {
-  const { count } = useContext(Context);
+  const { count,removeItemFromCart } = useContext(Context);
 
   function cartItem() {
     return (
@@ -20,7 +20,7 @@ function Cart() {
           </p>
         </div>
         <div className="delete">
-          <img src={deleteIcon} alt="delete-icon" />
+          <img style={{cursor:"pointer"}} onClick={removeItemFromCart} src={deleteIcon} alt="delete-icon" />
         </div>
       </div>
     );
