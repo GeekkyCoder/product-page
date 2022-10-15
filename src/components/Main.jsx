@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import productImg from "../images/products/image-product-1.jpg";
-import minusIcon from "../images/icons/icon-minus.png";
-import plusIcon from "../images/icons/icon-plus.png";
-import product1 from "../images/products/image-product-1.jpg";
-import product2 from "../images/products/image-product-2.jpg";
-import product3 from "../images/products/image-product-3.jpg";
-import product4 from "../images/products/image-product-4.jpg";
+import productImg from "../../public/images/products/image-product-1.jpg";
+import minusIcon from "../../public/images/icons/icon-minus.png";
+import plusIcon from "../../public/images/icons/icon-plus.png";
+import product1 from "../../public/images/products/image-product-1.jpg";
+import product2 from "../../public/images/products/image-product-2.jpg";
+import product3 from "../../public/images/products/image-product-3.jpg";
+import product4 from "../../public/images/products/image-product-4.jpg";
 import { Context } from "./Context";
 
 export default function Main() {
@@ -13,11 +13,10 @@ export default function Main() {
     useContext(Context);
 
   function handleImageClick(e) {
-    const imgSrc = e.target.src;
-    const sliceImgSrc = imgSrc.split("http://127.0.0.1:5173")[1]
-    setImageState(sliceImgSrc);
+    const imgSrc = e.target.getAttribute("src");
+    // const sliceImgSrc = imgSrc.split("http://127.0.0.1:5173")[1]
+    setImageState(imgSrc);
   }
-
 
   const isBtnDisabled = count > 0 ? false : true;
 

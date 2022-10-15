@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../components/Context";
-import productImg from "../images/products/image-product-1.jpg";
-import deleteIcon from "../images/icons/icon-delete.png";
+import productImg from "../../public/images/products/image-product-1.jpg";
+import deleteIcon from "../../public/images/icons/icon-delete.png";
 
 function Cart() {
   const { count } = useContext(Context);

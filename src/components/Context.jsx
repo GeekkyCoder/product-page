@@ -7,7 +7,7 @@ function ContextProvider(props) {
   const [isCartClicked, setIsCartClicked] = useState(false);
   const [count, setCount] = useState(0);
   const [imgState, setImageState] = useState(
-    "/src/images/products/image-product-1.jpg"
+    ".../../public/images/products/image-product-1.jpg"
   );
 
   function handleClick() {

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/logo.png";
-import cartIcon from "../images/icons/icon-cart.png";
-import avatarIcon from "../images/image-avatar.png";
-import menuIcon from "../images/icons/icon-menu.png";
-import iconClose from "../images/icons/icon-close.png";
+import logo from "../../public/images/logo.png";
+import cartIcon from "../../public/images/icons/icon-cart.png";
+import avatarIcon from "../../public/images/image-avatar.png";
+import menuIcon from "../../public/images/icons/icon-menu.png";
+import iconClose from "../../public/images/icons/icon-close.png";
 import { Context } from "./Context";
 import Cart from "./Cart";
 
